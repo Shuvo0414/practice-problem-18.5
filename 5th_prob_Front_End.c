@@ -11,7 +11,7 @@ The first line contains an integer 𝑛(1≤𝑛≤10^5)
  the number of elements in the array 𝑎
 
 The second line contains 𝑛
- integers 𝑎𝑖(−109≤𝑎𝑖≤109)
+ integers 𝑎𝑖(−10^9≤𝑎𝑖≤10^9)
  the elements of the array 𝑎
 .
 
@@ -43,14 +43,14 @@ int main()
     /*
     Two pointer approach:
 
-    i -> points to the front element (starting from index 0)
-    j -> points to the end element (starting from index n-1)
+    fornt -> points to the front element (starting from index 0)
+    end -> points to the end element (starting from index n-1)
 
     We don't actually remove elements.
     We only move the indexes.
     */
-    int i = 0;
-    int j = n - 1;
+    int fornt = 0;
+    int end = n - 1;
 
     /*
     count keeps track of the turn.
@@ -63,21 +63,21 @@ int main()
     /*
     Continue until both pointers cross.
 
-    i <= j means there are still elements left to print.
+    fornt <= end means there are still elements left to print.
     */
-    while (i <= j)
+    while (fornt <= end)
     {
         if (count % 2 == 0)
         {
             // Print front element and move front pointer forward
-            printf("%d ", a[i]);
-            i++;
+            printf("%d ", a[fornt]);
+            fornt++;
         }
         else
         {
             // Print end element and move end pointer backward
-            printf("%d ", a[j]);
-            j--;
+            printf("%d ", a[end]);
+            end--;
         }
 
         // Move to the next turn
