@@ -43,13 +43,13 @@ int main()
     /*
     Two pointer approach:
 
-    fornt -> points to the front element (starting from index 0)
+    front -> points to the front element (starting from index 0)
     end -> points to the end element (starting from index n-1)
 
     We don't actually remove elements.
     We only move the indexes.
     */
-    int fornt = 0;
+    int front = 0;
     int end = n - 1;
 
     /*
@@ -63,15 +63,15 @@ int main()
     /*
     Continue until both pointers cross.
 
-    fornt <= end means there are still elements left to print.
+    front <= end means there are still elements left to print.
     */
-    while (fornt <= end)
+    while (front <= end)
     {
         if (count % 2 == 0)
         {
             // Print front element and move front pointer forward
-            printf("%d ", a[fornt]);
-            fornt++;
+            printf("%d ", a[front]);
+            front++;
         }
         else
         {
