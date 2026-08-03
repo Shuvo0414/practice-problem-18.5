@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /*
-Minimize Number.
+Minimize Number-->
 
 Given a number N and an array A of N positive numbers. Print maximum possible operations that can be performed.
 
@@ -15,8 +15,8 @@ Second line contains N numbers (1  ≤  Ai  ≤  10^9).
 Output:
 Print the maximum possible number of operations that can be performed.
 
-Examples
-InputCopy
+Examples:
+Input:
 3
 8 12 40
 Output:
@@ -47,74 +47,40 @@ Since there is an odd number 5 on the blackboard already in the beginning, You c
 int main()
 {
     int N;
-
-    // Take the size of the array
     scanf("%d", &N);
 
     int A[N];
-
-    // Take array elements as input
     for (int i = 0; i < N; i++)
     {
         scanf("%d", &A[i]);
     }
 
-    // This variable stores how many successful divisions happened
     int count = 0;
 
-    /*
-    We don't know how many times the operation will repeat.
-    So we keep trying until we find an odd number.
-    */
     while (1)
     {
-        /*
-        flag = 1 means:
-        "Currently, I assume all numbers are even."
-
-        If we find any odd number,
-        we change flag to 0.
-        */
         int flag = 1;
 
-        // Check every element of the array
         for (int i = 0; i < N; i++)
         {
-            // If any number is odd, operation cannot continue
             if (A[i] % 2 != 0)
             {
                 flag = 0;
-                break; // No need to check remaining numbers
+                break;
             }
         }
-
-        /*
-        If flag becomes 0,
-        it means at least one number is odd.
-        Therefore, we stop the while loop.
-        */
         if (flag == 0)
         {
             break;
         }
-
-        /*
-        If we reach here,
-        all numbers are even.
-
-        Now perform one operation:
-        Divide every element by 2.
-        */
         for (int i = 0; i < N; i++)
         {
             A[i] = A[i] / 2;
         }
 
-        // One complete operation is finished
         count++;
     }
 
-    // Print total number of possible operations
     printf("%d", count);
 
     return 0;
