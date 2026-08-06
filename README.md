@@ -1,4 +1,4 @@
-# Codeforces Problem Solutions
+# Codeforces Problem Set
 
 ## Problem 1: Print from 1 to N
 
